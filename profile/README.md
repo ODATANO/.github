@@ -53,10 +53,6 @@ ODATANO establishes a unified integration layer that enables SAP systems to:
 
 ---
 
-## Long-Term Vision
-
-ODATANO is built to grow into a complete **SAP ↔ Cardano Integration Platform** — not just a read layer, but a full operational bridge between enterprise processes and the Cardano ecosystem.
-
 The individual components of the organization each address a distinct integration challenge. Together they form a coherent stack:
 
 - **ODATANO** handles the core data and transaction layer — read, build, sign, submit
@@ -78,19 +74,19 @@ As the platform matures, the focus expands toward:
 
 ## Repository Structure
 
-### 🔷 [ODATANO](https://github.com/ODATANO/ODATANO) — Core OData Service (CAP)
+### 🔷 [ODATANO](https://github.com/ODATANO/ODATANO) Core OData Service (CAP)
 
 The main repository. Connects SAP systems to the Cardano blockchain via a CAP-based OData V4 API, enabling secure on-chain data access and blockchain transaction execution. Built with SAP CAP and Cardano SDKs, it provides a unified integration layer that brings Cardano into SAP processes with full enterprise-grade security and auditability.
 
-### 🌑 [NIGHTGATE](https://github.com/ODATANO/NIGHTGATE) — Privacy Layer (Midnight)
+### 🌑 [NIGHTGATE](https://github.com/ODATANO/NIGHTGATE) Privacy Layer (Midnight)
 
 Connects SAP systems to the **Midnight privacy chain** via a CAP-based OData V4 API, enabling confidential on-chain data access and privacy-preserving transaction execution. NIGHTGATE extends ODATANO's architecture into the privacy domain, acting as the gateway between SAP enterprise processes and Midnight's zero-knowledge infrastructure.
 
-### 👁 [ODATANO-WATCH](https://github.com/ODATANO/ODATANO-WATCH) — Monitoring & Verification
+### 👁 [ODATANO-WATCH](https://github.com/ODATANO/ODATANO-WATCH) Monitoring & Verification
 
 Provides deterministic monitoring and verification of blockchain-backed business transactions for enterprise systems. ODATANO-WATCH enables SAP environments to track, audit and validate the lifecycle of on-chain operations initiated through ODATANO — closing the loop between transaction submission and enterprise-grade confirmation.
 
-### 🔗 [TRACE](https://github.com/ODATANO/TRACE) — Trusted Records Anchored on Chain for Enterprise
+### 🔗 [TRACE](https://github.com/ODATANO/TRACE) Trusted Records Anchored on Chain for Enterprise
 
 Example Application: A dedicated module for anchoring business records on-chain in a tamper-proof, auditable manner. TRACE provides the foundation for traceability, compliance and ESG reporting use cases, where enterprises need verifiable, immutable proof of process steps stored on the Cardano blockchain.
 
