@@ -78,8 +78,6 @@ As the platform matures, the focus expands toward:
 
 ## Repository Structure
 
-The [ODATANO GitHub Organization](https://github.com/ODATANO) hosts all components required for the project:
-
 ### 🔷 [ODATANO](https://github.com/ODATANO/ODATANO) — Core OData Service (CAP)
 
 The main repository. Connects SAP systems to the Cardano blockchain via a CAP-based OData V4 API, enabling secure on-chain data access and blockchain transaction execution. Built with SAP CAP and Cardano SDKs, it provides a unified integration layer that brings Cardano into SAP processes with full enterprise-grade security and auditability.
