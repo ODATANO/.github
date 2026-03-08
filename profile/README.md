@@ -90,7 +90,7 @@ Provides deterministic monitoring and verification of blockchain-backed business
 
 Example Application: A dedicated module for anchoring business records on-chain in a tamper-proof, auditable manner. TRACE provides the foundation for traceability, compliance and ESG reporting use cases, where enterprises need verifiable, immutable proof of process steps stored on the Cardano blockchain.
 
-### 🌐 [odatano.dev](https://github.com/ODATANO/odatano.dev) — Official Website
+### 🌐 [odatano.dev](https://github.com/ODATANO/odatano.dev) Official Website
 
 The official landing page and documentation site for the ODATANO project, built with Astro. Serves as the public-facing entry point to the ecosystem, providing project context, architecture overviews, milestone updates and integration documentation at [odatano.dev](https://odatano.dev).
 
