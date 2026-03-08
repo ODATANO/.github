@@ -1,11 +1,4 @@
-# SAP–Cardano OData V4 API Architecture by Maximilian Weber
-
-**Funded through Project Catalyst**
-[projectcatalyst.io/funds/14/cardano-open-developers/sap-cardano-odata-v4-api-with-cap-and-sap-cardano-sdk](https://projectcatalyst.io/funds/14/cardano-open-developers/sap-cardano-odata-v4-api-with-cap-and-sap-cardano-sdk)
-
-**ODATANO** is a technical engineering initiative by **Maximilian Weber**, funded through **Project Catalyst**, focused on creating a production-grade **OData V4 API layer** that connects SAP enterprise systems with the Cardano blockchain.
-
-The project aims to provide a clean, typed, and extensible foundation for enterprise integrations by leveraging the **SAP Cloud Application Programming Model (CAP)** and modern Cardano tooling.
+# SAP–Cardano & Midnight OData V4 API Architecture & Services by Maximilian Weber
 
 ---
 
@@ -13,10 +6,13 @@ The project aims to provide a clean, typed, and extensible foundation for enterp
 
 - **CAP Node.js/TypeScript architecture** as the backbone for all OData services
 - **Strict CDS entity modelling** for blockchain objects (Transactions, UTxOs, Addresses, Assets, Metadata)
-- **SAP-ready OData V4 endpoints** designed for S/4HANA, RAP, ABAP consumers and external interfaces
+- **SAP-ready OData V4 endpoints** designed for S/4HANA, RAP, ABAP consumers and external interfaces — covering both read and write operations
+- **Full transaction lifecycle support**: on-chain data retrieval, transaction building, external and HSM-based signing, and submission — all via typed OData V4 actions
 - **Blockchain data providers** integrated through a modular adapter layer (Blockfrost, Koios)
-- **Deterministic, schema-driven data contracts** enabling automation, analytics, reporting and workflows
-- **Layered architecture** supporting strong separation between data ingestion, normalization and OData exposure
+- **Plutus V3 smart contract interaction** through schema-driven, typed contract call definitions
+- **Deterministic, schema-driven data contracts** as the single source of truth across ingestion, normalization, signing and OData exposure
+- **Layered architecture** with clean separation between data ingestion, transaction building, signing workflows and OData service layer
+- **Enterprise security patterns**: HSM integration, external signing delegation, request coalescing and audit-safe key handling
 
 ---
 
@@ -24,24 +20,59 @@ The project aims to provide a clean, typed, and extensible foundation for enterp
 
 ODATANO establishes a unified integration layer that enables SAP systems to:
 
-- Retrieve on-chain data in a consistent, typed, and SAP-native format
-- Use blockchain information in ERP processes (logistics, finance, supply chain, ESG, automation)
+**On-Chain Data Access**
+- Retrieve on-chain data (transactions, UTxOs, addresses, assets, metadata) in a consistent, typed, and SAP-native format
+- Query blockchain state through standard OData V4 semantics — no custom REST clients or proprietary SDKs required
+- Use blockchain information directly in ERP processes: logistics, finance, supply chain, ESG reporting and automation
+
+**Transaction Building & Signing**
+- Build and sign Cardano transactions deterministically from within SAP processes via OData V4 actions
+- Support external and HSM-based signing workflows for enterprise-grade key management
+- Execute on-chain operations (ADA transfers, token transactions, smart contract interactions) triggered by SAP business events
+- Leverage Plutus V3 smart contract interactions through a typed, schema-driven contract layer
+
+**Traceability & Record Anchoring (TRACE)**
+- Anchor business records, process steps and document hashes immutably on-chain
+- Enable tamper-proof audit trails for compliance, ESG and supply chain traceability use cases
+- Integrate on-chain proof-of-existence directly into SAP document and workflow processes
+
+**Monitoring & Verification (ODATANO-WATCH)**
+- Monitor submitted transactions deterministically and feed confirmation status back into SAP
+- Verify blockchain-backed business transactions against expected on-chain state
+- Close the loop between SAP process execution and on-chain finality
+
+**Privacy-Preserving Operations (NIGHTGATE)**
+- Execute confidential transactions on the Midnight privacy chain from SAP environments
+- Access privacy-sensitive business data through a dedicated OData V4 layer with zero-knowledge guarantees
+- Extend enterprise integration patterns into the privacy domain without custom tooling
+
+**Enterprise Governance & Compliance**
 - Build custom SAP applications on top of Cardano data using standard OData semantics
-- Leverage standardized interfaces instead of custom REST or proprietary blockchain SDKs
-- Align blockchain interactions with enterprise governance, compliance and auditability
+- Align all blockchain interactions with enterprise governance, auditability and compliance requirements
+- Provide schema-driven data contracts as the single source of truth across all integration layers
 
 ---
 
 ## Long-Term Vision
 
-ODATANO is designed as the foundation for a broader **SAP ↔ Cardano Gateway**, enabling:
+ODATANO is built to grow into a complete **SAP ↔ Cardano Integration Platform** — not just a read layer, but a full operational bridge between enterprise processes and the Cardano ecosystem.
 
-- On-chain supply chain visibility
-- Tokenized asset management
-- Automated, rule-driven payments
-- ESG and traceability data integrations
-- Secure off-chain signing modules for SAP environments
-- End-to-end orchestration of blockchain operations in SAP processes
+The individual components of the organization each address a distinct integration challenge. Together they form a coherent stack:
+
+- **ODATANO** handles the core data and transaction layer — read, build, sign, submit
+- **ODATANO-WATCH** closes the feedback loop — monitoring, verification and confirmation back into SAP
+- **TRACE** anchors enterprise records on-chain — tamper-proof, auditable, compliance-ready
+- **NIGHTGATE** extends the stack into the privacy domain — confidential operations on the Midnight chain
+- **odatano.dev** provides the public documentation and project surface
+
+As the platform matures, the focus expands toward:
+
+- End-to-end orchestration of multi-step blockchain operations within SAP workflows
+- Tokenized asset management and on-chain settlement triggered by ERP events
+- Automated, rule-driven payment flows based on SAP business logic
+- ESG data anchoring and traceability across supply chain processes
+- Confidential business process integration via Midnight, enabling privacy-preserving on-chain operations for sensitive enterprise data
+- Broader Cardano ecosystem integrations exposed as SAP-consumable services
 
 ---
 
@@ -63,7 +94,7 @@ Provides deterministic monitoring and verification of blockchain-backed business
 
 ### 🔗 [TRACE](https://github.com/ODATANO/TRACE) — Trusted Records Anchored on Chain for Enterprise
 
-A dedicated module for anchoring business records on-chain in a tamper-proof, auditable manner. TRACE provides the foundation for traceability, compliance and ESG reporting use cases, where enterprises need verifiable, immutable proof of process steps stored on the Cardano blockchain.
+Example Application: A dedicated module for anchoring business records on-chain in a tamper-proof, auditable manner. TRACE provides the foundation for traceability, compliance and ESG reporting use cases, where enterprises need verifiable, immutable proof of process steps stored on the Cardano blockchain.
 
 ### 🌐 [odatano.dev](https://github.com/ODATANO/odatano.dev) — Official Website
 
@@ -71,4 +102,4 @@ The official landing page and documentation site for the ODATANO project, built 
 
 ---
 
-ODATANO is built with a strong focus on reliability, transparency and enterprise applicability — demonstrating how Cardano can be cleanly integrated into real SAP landscapes.
+ODATANO is built with a strong focus on reliability, transparency and enterprise applicability. Demonstrating how Cardano & Midnight can be cleanly integrated into real SAP landscapes.
