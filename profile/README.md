@@ -1,19 +1,19 @@
-# SAP CAP OData V4 Services for Cardano & Midnight
+# SAP CAP OData V4 Services and Applications for Cardano & Midnight
 
 ---
 
 ## Core Technical Principles
 
-- **SAP Cloud Application Programming Model ([CAP](https://cap.cloud.sap/docs/))** as the application framework, providing service definitions, runtime and OData V4 protocol handling out of the box
-- **Node.js/TypeScript** for type-safe service implementations, custom handlers and blockchain adapter logic
+- **SAP Cloud Application Programming Model ([CAP](https://cap.cloud.sap/docs/))** as the application framework, providing service definitions, runtime, and OData V4 protocol handling out of the box
+- **Node.js/TypeScript** for type-safe service implementations, custom handlers, and blockchain adapter logic
 - **Strict CDS entity modeling** for blockchain objects (Transactions, UTxOs, Addresses, Assets, Metadata)
-- **SAP-ready OData V4 endpoints** designed for S/4HANA, RAP and ABAP consumers as well as external interfaces covering both read and write operations
+- **SAP-ready OData V4 endpoints** designed for S/4HANA, RAP, and ABAP consumers as well as external interfaces covering both read and write operations
 - **Full transaction lifecycle support**: on-chain data retrieval, transaction building, external and HSM-based signing, and submission via typed OData V4 actions
 - **Blockchain data providers** integrated through a modular adapter layer (Blockfrost, Koios, Ogmios)
 - **Plutus V3 smart contract interaction** through schema-driven, typed contract call definitions
-- **Deterministic, schema-driven data contracts** as the single source of truth across ingestion, normalization, signing and OData exposure
-- **Layered architecture** with clean separation between data ingestion, transaction building, signing workflows and OData service layer
-- **Enterprise security patterns**: HSM integration, external signing delegation, request coalescing and audit-safe key handling
+- **Deterministic, schema-driven data contracts** as the single source of truth across ingestion, normalization, signing, and OData exposure
+- **Layered architecture** with clean separation between data ingestion, transaction building, signing workflows, and OData service layer
+- **Enterprise security patterns**: HSM integration, external signing delegation, request coalescing, and audit-safe key handling
 
 
 ## Repository Structure
@@ -24,7 +24,7 @@ The main repository. Connects SAP systems or any OData client to the Cardano blo
 
 ### 🔗 [TRACE](https://github.com/ODATANO/TRACE) Trusted Records Anchored on Chain for Enterprise
 
-SAP Fiori + CAP application built on top of ODATANO. A dedicated module for anchoring business records on-chain in a tamper-proof, auditable manner. TRACE provides the foundation for traceability, compliance and ESG reporting use cases, where enterprises need verifiable, immutable proof of process steps stored on the Cardano blockchain.
+SAP Fiori + CAP application built on top of ODATANO. A dedicated module for anchoring business records on-chain in a tamper-proof, auditable manner. TRACE provides the foundation for traceability, compliance, and ESG reporting use cases, where enterprises need verifiable, immutable proof of process steps stored on the Cardano blockchain.
 
 ### 📑 [FINCA](https://github.com/ODATANO/FINCA) Anchoring Financial Data on Chain (Cardano Foundation Reeve specification)
 
@@ -32,7 +32,11 @@ SAP Fiori + CAP application built on top of ODATANO. Anchors accounting data and
 
 ### 💲 [x402](https://github.com/ODATANO/x402) Implements the Cardano-x402-v2 spec, providing gated OData endpoints for agentic payments
 
-Payment-gating library for SAP CAP built on top of ODATANO. Implements the Cardano-x402-v2 spec — gated OData endpoints return HTTP 402 until the caller proves on-chain settlement. Asset-agnostic, no database, no smart contract: replay defense is the Cardano UTxO model itself. Ships with a working example CAP app.
+Payment-gating library for SAP CAP built on top of ODATANO. Implements the Cardano-x402-v2 spec. Gated OData endpoints return HTTP 402 until the caller proves on-chain settlement. Asset-agnostic, no database, no smart contract: replay defense is the Cardano UTxO model itself. Ships with a working example CAP app.
+
+### 🚚 [QUANTIX](https://github.com/ODATANO/QUANTIX) Delivery commitments that enforce themselves on-chain
+
+SAP Fiori + CAP application with multi-feed Charli3 pull-oracle built on top of ODATANO. Enables atomic on-chain B2B procurement orders by bundling multiple price feeds into a single transaction. Dual coordinators with disjoint UTxO sets eliminate refresh congestion. Settlement and price proof are combined into a single atomic Cardano transaction. Grand Prize winner at Charli3 Hackathon 2026.
 
 ### 🕛 [NIGHTGATE](https://github.com/ODATANO/NIGHTGATE) Privacy Layer (Midnight)
 
@@ -40,12 +44,12 @@ Connects SAP systems to the **Midnight privacy chain** via a CAP-based OData V4 
 
 ### 👁 [ODATANO-WATCH](https://github.com/ODATANO/ODATANO-WATCH) Monitoring & Verification
 
-Provides deterministic monitoring and verification of blockchain-backed business transactions for enterprise systems. ODATANO-WATCH enables SAP environments to track, audit and validate the lifecycle of on-chain operations initiated through ODATANO — closing the loop between transaction submission and enterprise-grade confirmation.
+Provides deterministic monitoring and verification of blockchain-backed business transactions for enterprise systems. ODATANO-WATCH enables SAP environments to track, audit, and validate the lifecycle of on-chain operations initiated through ODATANO — closing the loop between transaction submission and enterprise-grade confirmation.
 
 ### 🌐 [odatano.dev](https://github.com/ODATANO/odatano.dev) Official Website
 
-The official landing page and documentation site for the ODATANO project, built with Astro. Serves as the public-facing entry point to the ecosystem, providing project context, architecture overviews, milestone updates and integration documentation at [odatano.dev](https://odatano.dev).
+The official landing page and documentation site for the ODATANO project, built with Astro. Serves as the public-facing entry point to the ecosystem, providing project context, architecture overviews, milestone updates, and integration documentation at [odatano.dev](https://odatano.dev).
 
 ---
 
-ODATANO is built with a strong focus on reliability, transparency and enterprise applicability demonstrating how Cardano and Midnight can be cleanly and simple integrated into real enterprise landscapes.
+ODATANO is built with a strong focus on reliability, transparency, and enterprise applicability, demonstrating how Cardano and Midnight can be cleanly and simply integrated into real enterprise landscapes.
