@@ -30,7 +30,7 @@ SAP Fiori + CAP application built on top of ODATANO. A dedicated module for anch
 
 SAP Fiori + CAP application built on top of ODATANO. Anchors accounting data and financial reports — Balance Sheets and Income Statements — on Cardano as CIP-10 label-1447 metadata, following the Cardano Foundation Reeve specification. Verifiable accounting without a smart contract: one CIP-30 signature per anchor.
 
-###💲 [x402](https://github.com/ODATANO/x402) Implements the Cardano-x402-v2 spec, providing gated OData endpoints for agentic payments
+### 💲[x402](https://github.com/ODATANO/x402) Implements the Cardano-x402-v2 spec, providing gated OData endpoints for agentic payments
 
 Payment-gating library for SAP CAP built on top of ODATANO. Implements the Cardano-x402-v2 spec. Gated OData endpoints return HTTP 402 until the caller proves on-chain settlement. Asset-agnostic, no database, no smart contract: replay defense is the Cardano UTxO model itself. Ships with a working example CAP app.
 
