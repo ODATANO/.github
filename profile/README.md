@@ -42,13 +42,9 @@ SAP Fiori + CAP application with multi-feed Charli3 pull-oracle built on top of 
 
 Connects SAP systems to the **Midnight privacy chain** via a CAP-based OData V4 API, enabling confidential on-chain data access and privacy-preserving transaction execution. NIGHTGATE extends ODATANO's architecture into the privacy domain, acting as the gateway between SAP enterprise processes and Midnight's zero-knowledge infrastructure.
 
-### 👁 [ODATANO-WATCH](https://github.com/ODATANO/ODATANO-WATCH) Monitoring & Verification
+### 🔋 [NIGHTPASS](https://github.com/ODATANO/NIGHTPASS) Privacy Layer (Midnight)
 
-Provides deterministic monitoring and verification of blockchain-backed business transactions for enterprise systems. ODATANO-WATCH enables SAP environments to track, audit, and validate the lifecycle of on-chain operations initiated through ODATANO — closing the loop between transaction submission and enterprise-grade confirmation.
-
-### 🌐 [odatano.dev](https://github.com/ODATANO/odatano.dev) Official Website
-
-The official landing page and documentation site for the ODATANO project, built with Astro. Serves as the public-facing entry point to the ecosystem, providing project context, architecture overviews, milestone updates, and integration documentation at [odatano.dev](https://odatano.dev).
+NIGHTPASS lets battery manufacturers prove EU Battery Passport compliance without disclosing the confidential supply-chain, material, and carbon-footprint data behind it. Built on Midnight's zero-knowledge infrastructure and exposed through a CAP-based OData V4 API, NIGHTPASS turns regulatory disclosure into verifiable proof
 
 ---
 
