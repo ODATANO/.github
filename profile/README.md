@@ -16,11 +16,19 @@
 - **Enterprise security patterns**: HSM integration, external signing delegation, request coalescing, and audit-safe key handling
 
 
-## Repository Structure
+# Repository Structure
+
+## Core Services
 
 ### 🔷 [ODATANO](https://github.com/ODATANO/ODATANO) Core OData Service for interacting with the Cardano Blockchain
 
 The main repository. Connects SAP systems or any OData client to the Cardano blockchain via a SAP CAP-based OData V4 API, enabling secure on-chain data access and blockchain transaction execution. Built with SAP CAP and Cardano SDKs, it provides a unified integration layer that brings Cardano into business processes with full enterprise-grade security and auditability.
+
+### 🕛 [NIGHTGATE](https://github.com/ODATANO/NIGHTGATE) Privacy Layer (Midnight)
+
+Connects SAP systems to the **Midnight privacy chain** via a CAP-based OData V4 API, enabling confidential on-chain data access and privacy-preserving transaction execution. NIGHTGATE extends ODATANO's architecture into the privacy domain, acting as the gateway between SAP enterprise processes and Midnight's zero-knowledge infrastructure.
+
+## Specific Use Case Implementations
 
 ### 🔗 [TRACE](https://github.com/ODATANO/TRACE) Trusted Records Anchored on Chain for Enterprise
 
@@ -38,11 +46,11 @@ Payment-gating library for SAP CAP built on top of ODATANO. Implements the Carda
 
 SAP Fiori + CAP application with multi-feed Charli3 pull-oracle built on top of ODATANO. Enables atomic on-chain B2B procurement orders by bundling multiple price feeds into a single transaction. Dual coordinators with disjoint UTxO sets eliminate refresh congestion. Settlement and price proof are combined into a single atomic Cardano transaction. Grand Prize winner at Charli3 Hackathon 2026.
 
-### 🕛 [NIGHTGATE](https://github.com/ODATANO/NIGHTGATE) Privacy Layer (Midnight)
+### 📝 [DAYPASS](https://github.com/ODATANO/DAYPASS) EU battery passport (Reg. 2023/1542) on Cardano
 
-Connects SAP systems to the **Midnight privacy chain** via a CAP-based OData V4 API, enabling confidential on-chain data access and privacy-preserving transaction execution. NIGHTGATE extends ODATANO's architecture into the privacy domain, acting as the gateway between SAP enterprise processes and Midnight's zero-knowledge infrastructure.
+EU battery passport (Reg. 2023/1542) on Cardano: CIP-25 NFT anchors, AES-encrypted tiers, Merkle-field disclosure, and on-chain Groth16 ZK predicates. SAP CAP app on @odatano/core, with Catena-X PAC export like NIGHTPASS
 
-### 🔋 [NIGHTPASS](https://github.com/ODATANO/NIGHTPASS) Privacy Layer (Midnight)
+### 🔋 [NIGHTPASS](https://github.com/ODATANO/NIGHTPASS) EU battery passport (Reg. 2023/1542) on Midnight
 
 NIGHTPASS lets battery manufacturers prove EU Battery Passport compliance without disclosing the confidential supply-chain, material, and carbon-footprint data behind it. Built on Midnight's zero-knowledge infrastructure and exposed through a CAP-based OData V4 API, NIGHTPASS turns regulatory disclosure into verifiable proof
 
