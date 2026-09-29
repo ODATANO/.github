@@ -1,59 +1,98 @@
-# SAP CAP OData V4 Services and Applications for Cardano & Midnight
+<a href="https://odatano.dev">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-night.png">
+    <img src="assets/banner-day.png" alt="ODATANO: OData V4 for Cardano and Midnight" width="100%">
+  </picture>
+</a>
 
----
+<p align="center">
+  <a href="https://odatano.dev">Website</a> ·
+  <a href="https://odatano.dev/docs/get-started/">Docs</a> ·
+  <a href="https://api.odatano.dev">Hosted API</a> ·
+  <a href="https://www.npmjs.com/org/odatano">npm</a>
+</p>
 
-## Core Technical Principles
+<p align="center">
+  <a href="https://www.npmjs.com/package/@odatano/core"><img src="https://img.shields.io/npm/v/@odatano/core?label=%40odatano%2Fcore&color=0c5ecf" alt="@odatano/core"></a>
+  <a href="https://www.npmjs.com/package/@odatano/nightgate"><img src="https://img.shields.io/npm/v/@odatano/nightgate?label=%40odatano%2Fnightgate&color=1b3a96" alt="@odatano/nightgate"></a>
+  <img src="https://img.shields.io/badge/license-Apache%202.0-5a6480" alt="Apache 2.0">
+</p>
 
-- **SAP Cloud Application Programming Model ([CAP](https://cap.cloud.sap/docs/))** as the application framework, providing service definitions, runtime, and OData V4 protocol handling out of the box
-- **Node.js/TypeScript** for type-safe service implementations, custom handlers, and blockchain adapter logic
-- **Strict CDS entity modeling** for blockchain objects (Transactions, UTxOs, Addresses, Assets, Metadata)
-- **SAP-ready OData V4 endpoints** designed for S/4HANA, RAP, and ABAP consumers as well as external interfaces covering both read and write operations
-- **Full transaction lifecycle support**: on-chain data retrieval, transaction building, external and HSM-based signing, and submission via typed OData V4 actions
-- **Blockchain data providers** integrated through a modular adapter layer (Blockfrost, Koios, Ogmios)
-- **Plutus V3 smart contract interaction** through schema-driven, typed contract call definitions
-- **Deterministic, schema-driven data contracts** as the single source of truth across ingestion, normalization, signing, and OData exposure
-- **Layered architecture** with clean separation between data ingestion, transaction building, signing workflows, and OData service layer
-- **Enterprise security patterns**: HSM integration, external signing delegation, request coalescing, and audit-safe key handling
+ODATANO is an open source OData V4 API for Cardano and Midnight. Blocks, UTxOs, pools and contract state are OData entities. Transactions, mints, attestations and zero-knowledge proofs are actions. SAP Fiori, Excel, Power BI, any OData client and AI agents use the same routes.
+
+## Run it
+
+| Mode | How | Start |
+|---|---|---|
+| **Hosted** | One key for both chains and the analytics, first calls free | [api.odatano.dev](https://api.odatano.dev) |
+| **Standalone** | Your own instance on your own backends | [Get started](https://odatano.dev/docs/get-started/) |
+| **SAP CAP plugin** | Add the services to an existing CAP app | `npm install @odatano/core` |
+
+The routes are the same in all three. Integrate against the hosted API, move to your own instance later without changes.
+
+## Core
+
+<table>
+  <tr>
+    <td width="210">
+      <a href="https://github.com/ODATANO/ODATANO"><picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/odatano-core-logo-on-dark.svg">
+        <img src="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/odatano-core-logo.svg" alt="ODATANO CORE" height="30">
+      </picture></a>
+    </td>
+    <td><b>Cardano.</b> Blocks, transactions, addresses, UTxOs, assets, pools and DReps as entities. Unsigned ADA, multi-asset, mint, metadata and Plutus V3 transactions. Signing requests, HSM signing and submission. <code>@odatano/core</code></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/ODATANO/NIGHTGATE"><picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/nightgate-logo.svg">
+        <img src="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/nightgate-logo-on-light.svg" alt="NIGHTGATE" height="30">
+      </picture></a>
+    </td>
+    <td><b>Midnight.</b> Blocks and contract state as entities. Shielded transfers, Compact contract calls, document anchoring and zero-knowledge attestations. Sponsored, so no NIGHT or DUST is needed. <code>@odatano/nightgate</code></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://odatano.dev/docs/astra/"><picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/astra-logo-on-dark.svg">
+        <img src="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/astra-logo.svg" alt="ODATANO ASTRA" height="30">
+      </picture></a>
+    </td>
+    <td><b>Analytics.</b> Key figures, daily tables, rankings and anomalies over both chains as OData. Hosted only, same key.</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/ODATANO/ODATANO-CORE-MCP"><picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/odatano-mcp-logo-on-dark.svg">
+        <img src="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/odatano-mcp-logo.svg" alt="ODATANO MCP" height="30">
+      </picture></a>
+    </td>
+    <td><b>AI agents on Cardano.</b> MCP server that reads the chain and builds transactions. Every build comes back unsigned. <code>@odatano/core-mcp</code></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/ODATANO/NIGHTGATE-MCP"><picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/nightgate-mcp-logo.svg">
+        <img src="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/nightgate-mcp-logo-on-light.svg" alt="NIGHTGATE MCP" height="30">
+      </picture></a>
+    </td>
+    <td><b>AI agents on Midnight.</b> MCP server for anchoring, attesting and verifying. The agent gets a notary, never a wallet. <code>@odatano/nightgate-mcp</code></td>
+  </tr>
+</table>
+
+## Built on ODATANO
+
+| Project | What | Chain |
+|---|---|---|
+| [**DAYPASS**](https://github.com/ODATANO/DAYPASS) | EU battery passport (Reg. 2023/1542). CIP-25 anchors, encrypted tiers, Groth16 predicates on the Cardano ledger. | Cardano |
+| [**NIGHTPASS**](https://github.com/ODATANO/NIGHTPASS) | The shielded twin of DAYPASS. Sensitive metrics proven with ZK attestations, values stay hidden. | Midnight |
+| [**DPP SDK**](https://github.com/ODATANO/DPP-SDK) | Chain-agnostic core of both passports. Hashing, encryption, Merkle trees, ZK claim planning. | Both |
+| [**TRACE**](https://github.com/ODATANO/TRACE) | Pharma batches from manufacturer to pharmacy as NFTs under a Plutus V3 policy. Cold-chain data anchored per handoff. | Cardano |
+| [**QUANTIX**](https://github.com/ODATANO/QUANTIX) | B2B raw-material orders settled atomically against Charli3 oracle prices. Charli3 Grand Prize 2026. | Cardano |
+| [**FINCA**](https://github.com/ODATANO/FINCA) | Balance sheets and income statements as CIP-10 label-1447 metadata, following the Reeve spec. | Cardano |
+| [**x402**](https://github.com/ODATANO/x402) | Payment gating for SAP CAP. OData endpoints return HTTP 402 until on-chain settlement is proven. | Cardano |
+| [**DAYZERO**](https://github.com/ODATANO/DAYZERO) | Groth16 proving and verification plus Poseidon hashing on BLS12-381 in pure TypeScript. | Cardano |
+| [**WATCH**](https://github.com/ODATANO/WATCH) | Watches addresses, credentials and policies. Emits UTxO events with replay. | Cardano |
 
 
-# Repository Structure
-
-## Core Services
-
-### 🔷 [ODATANO](https://github.com/ODATANO/ODATANO) Core OData Service for interacting with the Cardano Blockchain
-
-The main repository. Connects SAP systems or any OData client to the Cardano blockchain via a SAP CAP-based OData V4 API, enabling secure on-chain data access and blockchain transaction execution. Built with SAP CAP and Cardano SDKs, it provides a unified integration layer that brings Cardano into business processes with full enterprise-grade security and auditability.
-
-### 🕛 [NIGHTGATE](https://github.com/ODATANO/NIGHTGATE) Privacy Layer (Midnight)
-
-Connects SAP systems to the **Midnight privacy chain** via a CAP-based OData V4 API, enabling confidential on-chain data access and privacy-preserving transaction execution. NIGHTGATE extends ODATANO's architecture into the privacy domain, acting as the gateway between SAP enterprise processes and Midnight's zero-knowledge infrastructure.
-
-## Specific Use Case Implementations
-
-### 🔗 [TRACE](https://github.com/ODATANO/TRACE) Trusted Records Anchored on Chain for Enterprise
-
-SAP Fiori + CAP application built on top of ODATANO. A dedicated module for anchoring business records on-chain in a tamper-proof, auditable manner. TRACE provides the foundation for traceability, compliance, and ESG reporting use cases, where enterprises need verifiable, immutable proof of process steps stored on the Cardano blockchain.
-
-### 📑 [FINCA](https://github.com/ODATANO/FINCA) Anchoring Financial Data on Chain (Cardano Foundation Reeve specification)
-
-SAP Fiori + CAP application built on top of ODATANO. Anchors accounting data and financial reports — Balance Sheets and Income Statements — on Cardano as CIP-10 label-1447 metadata, following the Cardano Foundation Reeve specification. Verifiable accounting without a smart contract: one CIP-30 signature per anchor.
-
-### 💲[x402](https://github.com/ODATANO/x402) Implements the Cardano-x402-v2 spec, providing gated OData endpoints for agentic payments
-
-Payment-gating library for SAP CAP built on top of ODATANO. Implements the Cardano-x402-v2 spec. Gated OData endpoints return HTTP 402 until the caller proves on-chain settlement. Asset-agnostic, no database, no smart contract: replay defense is the Cardano UTxO model itself. Ships with a working example CAP app.
-
-### 🚚 [QUANTIX](https://github.com/ODATANO/QUANTIX) Delivery commitments that enforce themselves on-chain
-
-SAP Fiori + CAP application with multi-feed Charli3 pull-oracle built on top of ODATANO. Enables atomic on-chain B2B procurement orders by bundling multiple price feeds into a single transaction. Dual coordinators with disjoint UTxO sets eliminate refresh congestion. Settlement and price proof are combined into a single atomic Cardano transaction. Grand Prize winner at Charli3 Hackathon 2026.
-
-### 📝 [DAYPASS](https://github.com/ODATANO/DAYPASS) EU battery passport (Reg. 2023/1542) on Cardano
-
-EU battery passport (Reg. 2023/1542) on Cardano: CIP-25 NFT anchors, AES-encrypted tiers, Merkle-field disclosure, and on-chain Groth16 ZK predicates. SAP CAP app on @odatano/core, with Catena-X PAC export like NIGHTPASS
-
-### 🔋 [NIGHTPASS](https://github.com/ODATANO/NIGHTPASS) EU battery passport (Reg. 2023/1542) on Midnight
-
-NIGHTPASS lets battery manufacturers prove EU Battery Passport compliance without disclosing the confidential supply-chain, material, and carbon-footprint data behind it. Built on Midnight's zero-knowledge infrastructure and exposed through a CAP-based OData V4 API, NIGHTPASS turns regulatory disclosure into verifiable proof
-
----
-
-ODATANO is built with a strong focus on reliability, transparency, and enterprise applicability, demonstrating how Cardano and Midnight can be cleanly and simply integrated into real enterprise landscapes.
+<h3 align="center">Questions or a use case in mind: <a href="https://odatano.dev/#contact">odatano.dev</a></h3>

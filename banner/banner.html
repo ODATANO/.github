@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ODATANO banner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;600&display=block" rel="stylesheet">
+<style>
+  /* Rendered at 1280x420, device scale 2. Theme via ?theme=day|night. */
+  :root {
+    --bg: linear-gradient(180deg, #f5f5f7 0%, #e8e8eb 100%);
+    --ink: #1a1a2e;
+    --ink-2: #5a6480;
+    --accent: #0c5ecf;
+    --night: #1b3a96;
+    --surface: #fafafb;
+    --border: rgba(0, 27, 94, 0.1);
+    --chrome: rgba(0, 27, 94, 0.03);
+    --code-comment: #7a8398;
+    --chip-bg: #fafafb;
+    --headline-cardano: linear-gradient(135deg, #0C5ECF 0%, #3B8EF0 60%, #8ab8ff 100%);
+    --headline-midnight: linear-gradient(135deg, #0e0f13 0%, #16181f 55%, #1b3a96 100%);
+    --rule: linear-gradient(90deg, #0c5ecf 0%, #3b8ef0 50%, #1b3a96 100%);
+  }
+  [data-theme="night"] {
+    --bg: linear-gradient(180deg, #15171d 0%, #0a0b0e 100%);
+    --ink: #e8eaf0;
+    --ink-2: #9aa1b2;
+    --accent: #7aa2ff;
+    --night: #7aa2ff;
+    --surface: #0a0c12;
+    --border: #262a35;
+    --chrome: #12151d;
+    --code-comment: #6b7280;
+    --chip-bg: #16181f;
+    --headline-cardano: linear-gradient(0deg, #7aa2ff, #7aa2ff);
+    --headline-midnight: linear-gradient(0deg, #e8eaf0, #e8eaf0);
+    --rule: linear-gradient(90deg, #7aa2ff 0%, #9cc6ff 50%, #4a5570 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 420px; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    position: relative;
+  }
+  .rule { position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--rule); }
+  .wrap {
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    gap: 44px;
+    padding: 40px 64px 0 64px;
+    height: 100%;
+  }
+  .logo { height: 50px; display: block; margin-bottom: 26px; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 54px; line-height: 1.04; font-weight: 800;
+    letter-spacing: -0.035em;
+    margin-bottom: 18px;
+  }
+  h1 .c, h1 .m {
+    background: var(--headline-cardano);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h1 .m { background-image: var(--headline-midnight); }
+  .sub { font-size: 18px; line-height: 1.5; color: var(--ink-2); max-width: 600px; margin-bottom: 22px; }
+  .chips { display: flex; gap: 8px; flex-wrap: nowrap; }
+  .chip {
+    font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 500;
+    padding: 6px 10px; border-radius: 8px;
+    background: var(--chip-bg); border: 1px solid var(--border); color: var(--ink);
+  }
+  .chip b { color: var(--accent); font-weight: 500; }
+
+  .right { display: flex; flex-direction: column; gap: 22px; padding-top: 4px; }
+  .chains { display: flex; align-items: center; justify-content: flex-end; gap: 22px; height: 50px; }
+  .chains img { height: 26px; }
+  .chains .sep { width: 1px; height: 28px; background: var(--border); }
+  .code {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 27, 94, 0.08);
+  }
+  [data-theme="night"] .code { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); }
+  .chrome {
+    display: flex; align-items: center; gap: 8px;
+    padding: 11px 16px; background: var(--chrome); border-bottom: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--ink-2);
+  }
+  .chrome .g { color: var(--accent); font-weight: 600; }
+  pre {
+    font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.72;
+    padding: 16px 18px 18px; color: var(--ink);
+  }
+  .k { color: var(--accent); }
+  .cm { color: var(--code-comment); }
+  .cmd { color: var(--accent); font-weight: 600; }
+  .cmd.n { color: var(--night); }
+  .foot {
+    position: absolute; right: 64px; bottom: 26px;
+    font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ink-2);
+  }
+  .only-day { display: block; } .only-night { display: none; }
+  [data-theme="night"] .only-day { display: none; }
+  [data-theme="night"] .only-night { display: block; }
+</style>
+</head>
+<body>
+<script>
+  document.documentElement.dataset.theme = new URLSearchParams(location.search).get('theme') || 'day';
+</script>
+<div class="rule"></div>
+<div class="wrap">
+  <div class="left">
+    <img class="logo only-day" src="logos/odatano-logo.svg" alt="ODATANO">
+    <img class="logo only-night" src="logos/odatano-logo-on-dark.svg" alt="ODATANO">
+    <p class="eyebrow">Open source · Apache 2.0</p>
+    <h1>OData V4 for<br><span class="c">Cardano</span> and <span class="m">Midnight</span>.</h1>
+    <p class="sub">Blocks, UTxOs and contract state as OData entities. Transactions and zero&#8209;knowledge proofs as actions.</p>
+    <div class="chips">
+      <span class="chip"><b>@odatano/</b>core</span>
+      <span class="chip"><b>@odatano/</b>nightgate</span>
+      <span class="chip"><b>@odatano/</b>core-mcp</span>
+      <span class="chip"><b>@odatano/</b>nightgate-mcp</span>
+    </div>
+  </div>
+  <div class="right">
+    <div class="chains">
+      <img class="only-day" src="logos/cardano-horizontal-blue.svg" alt="Cardano">
+      <img class="only-night" src="logos/cardano-horizontal-white.svg" alt="Cardano">
+      <span class="sep"></span>
+      <img class="only-day" src="logos/midnight-logo-horizontal-dark.svg" alt="Midnight">
+      <img class="only-night" src="logos/midnight-logo-horizontal-white.svg" alt="Midnight">
+    </div>
+    <div class="code">
+      <div class="chrome"><span class="g">&gt;_</span><span>requests.http</span></div>
+<pre><span class="cm"># read the chain</span>
+<span class="cmd">GET</span>  /cardano-odata/Blocks?<span class="k">$top</span>=1
+<span class="cm"># build an unsigned transaction</span>
+<span class="cmd">POST</span> /cardano-transaction/BuildSimpleAdaTransaction
+<span class="cm"># same pattern on Midnight</span>
+<span class="cmd n">GET</span>  /nightgate/Blocks?<span class="k">$top</span>=1
+<span class="cmd n">GET</span>  /nightgate-verify/verifyAttestationState(…)</pre>
+    </div>
+  </div>
+</div>
+<div class="foot">odatano.dev</div>
+</body>
+</html>
