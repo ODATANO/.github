@@ -49,7 +49,7 @@ The routes are the same in all three. Integrate against the hosted API, move to 
         <img src="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/nightgate-logo-on-light.svg" alt="NIGHTGATE" height="30">
       </picture></a>
     </td>
-    <td><b>Midnight.</b> Blocks and contract state as entities. Shielded transfers, Compact contract calls, document anchoring and zero-knowledge attestations. Sponsored, so no NIGHT or DUST is needed. <code>@odatano/nightgate</code></td>
+    <td><b>Midnight.</b> Blocks and contract state as entities. Shielded transfers, Compact contract calls, document anchoring and zero-knowledge attestations. Shielded tokens minted on demand and swapped over an offer board. Sponsored, so no NIGHT or DUST is needed. <code>@odatano/nightgate</code></td>
   </tr>
   <tr>
     <td>
@@ -76,7 +76,7 @@ The routes are the same in all three. Integrate against the hosted API, move to 
         <img src="https://cdn.jsdelivr.net/npm/@odatano/brand@1/logos/nightgate-mcp-logo-on-light.svg" alt="NIGHTGATE MCP" height="30">
       </picture></a>
     </td>
-    <td><b>AI agents on Midnight.</b> MCP server for anchoring, attesting and verifying. The agent gets a notary, never a wallet. <code>@odatano/nightgate-mcp</code></td>
+    <td><b>AI agents on Midnight.</b> MCP server for anchoring, attesting and verifying, plus minting, sending and swapping shielded tokens. The agent gets a notary, never a wallet. <code>@odatano/nightgate-mcp</code></td>
   </tr>
 </table>
 
@@ -86,11 +86,13 @@ The routes are the same in all three. Integrate against the hosted API, move to 
 |---|---|---|
 | [**DAYPASS**](https://github.com/ODATANO/DAYPASS) | EU battery passport (Reg. 2023/1542). CIP-25 anchors, encrypted tiers, Groth16 predicates on the Cardano ledger. | Cardano |
 | [**NIGHTPASS**](https://github.com/ODATANO/NIGHTPASS) | The shielded twin of DAYPASS. Sensitive metrics proven with ZK attestations, values stay hidden. | Midnight |
+| [**NIGHTGATE CONTRACTS**](https://github.com/ODATANO/NIGHTGATE-CONTRACTS) | The Compact contracts behind NIGHTGATE, one npm package each. Attestation vaults, token factory, holder registry, m402 payment vault. | Midnight |
 | [**DPP SDK**](https://github.com/ODATANO/DPP-SDK) | Chain-agnostic core of both passports. Hashing, encryption, Merkle trees, ZK claim planning. | Both |
 | [**TRACE**](https://github.com/ODATANO/TRACE) | Pharma batches from manufacturer to pharmacy as NFTs under a Plutus V3 policy. Cold-chain data anchored per handoff. | Cardano |
 | [**QUANTIX**](https://github.com/ODATANO/QUANTIX) | B2B raw-material orders settled atomically against Charli3 oracle prices. Charli3 Grand Prize 2026. | Cardano |
 | [**FINCA**](https://github.com/ODATANO/FINCA) | Balance sheets and income statements as CIP-10 label-1447 metadata, following the Reeve spec. | Cardano |
 | [**x402**](https://github.com/ODATANO/x402) | Payment gating for SAP CAP. OData endpoints return HTTP 402 until on-chain settlement is proven. | Cardano |
+| [**CAP-AUTH**](https://github.com/ODATANO/CAP-AUTH) | Transport authentication for SAP CAP as thin lanes in front of CAP's own strategy. Authorization stays in the CDS model. | Both |
 | [**DAYZERO**](https://github.com/ODATANO/DAYZERO) | Groth16 proving and verification plus Poseidon hashing on BLS12-381 in pure TypeScript. | Cardano |
 | [**WATCH**](https://github.com/ODATANO/WATCH) | Watches addresses, credentials and policies. Emits UTxO events with replay. | Cardano |
 
